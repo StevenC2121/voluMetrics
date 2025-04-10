@@ -19,3 +19,4 @@ class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         fields = ["id", "name", "weight", "reps", "performed_at", "lifter"]
+        extra_kwargs = {"lifter": {"read_only": True}}
