@@ -1,0 +1,60 @@
+.exercises-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 0 0.5rem 0;;
+    justify-content: flex-start;
+  }
+  
+  /* Compact card */
+  .exercise-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    color: #222;
+    max-width: 220px;          /* ⬅️ small, consistent card width */
+    min-width: 180px;
+    flex: 1 0 auto;            /* shrink-to-fit */
+  }
+  
+  /* Name stands out */
+  .exercise-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+  }
+  
+  /* Subtext with tighter spacing */
+  .exercise-weight,
+  .exercise-reps,
+  .exercise-date {
+    margin: 0.1rem 0;
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  /* Delete button — compact */
+  .delete-button {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    background: none;
+    border: 1px solid #c00;
+    color: #c00;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .delete-button:hover {
+    background-color: #c00;
+    color: #fff;
+  }
+  
