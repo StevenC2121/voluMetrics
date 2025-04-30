@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../api";
+import Exercise from "../components/Exercise";
 
 function Home() {
   const [exercises, setExercises] = useState([]);
@@ -48,6 +49,13 @@ function Home() {
     <div>
       <div>
         <h2>Exercises</h2>
+        {exercises.map((exercise) => (
+          <Exercise
+            exercise={exercise}
+            onDelete={deleteExercise}
+            key={exercise.id}
+          />
+        ))}
       </div>
       <h2>Log a Lift</h2>
       <form onSubmit={createExercise}>
