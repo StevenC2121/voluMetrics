@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../api";
 import Exercise from "../components/Exercise";
+import "../styles/Home.css";
 
 function Home() {
   const [exercises, setExercises] = useState([]);
@@ -47,15 +48,20 @@ function Home() {
   };
   return (
     <div>
-      <div>
-        <h2>Exercises</h2>
-        {exercises.map((exercise) => (
-          <Exercise
-            exercise={exercise}
-            onDelete={deleteExercise}
-            key={exercise.id}
-          />
-        ))}
+      <div className="exercises-section">
+        <h2>Recent Exercises</h2>
+        <div className="exercise-list">
+          {[...exercises]
+            .reverse()
+            .slice(0, 8)
+            .map((exercise) => (
+              <Exercise
+                exercise={exercise}
+                onDelete={deleteExercise}
+                key={exercise.id}
+              />
+            ))}
+        </div>
       </div>
       <h2>Log a Lift</h2>
       <form onSubmit={createExercise}>
